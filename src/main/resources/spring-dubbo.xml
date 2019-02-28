@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="microservice-consumer1" owner="dubbo-consumer1" />
+	<!-- 定义 zookeeper 注册中心地址及协议 -->
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+	<dubbo:reference id="userService" interface="com.example.service.UserService"  timeout="8000"/>
+
+</beans>
