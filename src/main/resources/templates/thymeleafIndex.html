@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 Hello Word !(thymeleaf)
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>手机号</th>
+        <th>地址</th>
+    </tr>
+    <tr th:each="user : ${userList}">
+        <td th:text="${user.userId}"></td>
+        <td th:text="${user.phone}"></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.address}"></td>
+    </tr>
+</table>
 </body>
 </html>
